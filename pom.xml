@@ -23,27 +23,12 @@
 			<id>central</id>
 			<url>https://maven.aliyun.com/repository/public</url>
 		</repository>
-		<!-- <repository>
-            <id>spring-milestones</id>
-            <name>Spring Milestones</name>
-            <url>https://repo.spring.io/milestone</url>
-        </repository> -->
-		<!-- <repository>
-            <id>snapshots</id>
-            <name>Local Nexus</name>
-            <url>https://repo.spring.io/release</url>
-        </repository> -->
   	</repositories>
 	<pluginRepositories>
 		<pluginRepository>
 			<id>central</id>
 			<url>https://maven.aliyun.com/repository/public</url>
 		</pluginRepository>
-		<!-- <pluginRepository>
-            <id>spring-milestones</id>
-            <name>Spring Milestones</name>
-            <url>https://repo.spring.io/milestone</url>
-        </pluginRepository> -->
 	</pluginRepositories>
     <dependencies>
 
@@ -162,8 +147,6 @@
                 </configuration>
             </plugin>
         </plugins>
-
-
 
     </build>
 
