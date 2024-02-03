@@ -1,57 +1,52 @@
-package com.example.demo.entity;
+package com.example.demo.vo;
 
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableName;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 /**
  * @version 1.0.0
- * @className: ExInformationEntity
+ * @className: ExInformationAndAuthorVO
  * @author: ning li
- * @date: 2024/1/25
+ * @date: 2024/2/3
  **/
 
 @Data
-@TableName("ex_information")
-@ApiModel(value="ExInformationEntity对象", description="展品信息表")
-public class ExInformationEntity {
+public class ExInformationAndAuthorVO {
     @ApiModelProperty(value = "主键")
-    @TableField("id")
     private int id;
 
     @ApiModelProperty(value = "展品名")
-    @TableField("name")
     private String name;
 
     @ApiModelProperty(value = "展品类型")
-    @TableField("type")
     private int type;//1为唐卡，2堆绣，3泥塑，4彩绘，5壁画，6其他
 
     @ApiModelProperty(value = "作者id")
-    @TableField("author_id")
     private int authorId;
 
     @ApiModelProperty(value = "展品信息")
-    @TableField("information")
     private String information;
 
     @ApiModelProperty(value = "图片路径")
-    @TableField("picture_path")
     private String picturePath;
 
-    @ApiModelProperty(value = "删除标识")
-    @TableField("del_flag")
-    private int delFlag;
-
     @ApiModelProperty(value = "展品尺寸")
-    @TableField("size")
     private String size;
 
     @ApiModelProperty(value = "展品创作时间")
-    @TableField("create_time")
     private String createTime;
+
+    @ApiModelProperty(value = "作者姓名")
+    private String authorName;
+
+    @ApiModelProperty(value = "作者介绍")
+    private String authorIntroduction;
+
+    @ApiModelProperty(value = "照片路径")
+    private String authorPicturePath;
+
+
+
 
 
 }

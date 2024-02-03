@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.entity.ExInformationEntity;
+import com.example.demo.vo.ExInformationAndAuthorVO;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +23,8 @@ public interface ExInformationService {
 //    List<SysOfficeEntity> queryAreas();
 
     List<ExInformationEntity> queryExInformation(@Param("type") int type);
+
+    ExInformationAndAuthorVO selectExInformationAndAuthor(@Param("type") int id);
 
 
 }

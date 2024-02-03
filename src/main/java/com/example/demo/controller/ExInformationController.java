@@ -4,6 +4,7 @@ import com.example.demo.entity.ExInformationEntity;
 import com.example.demo.service.ExInformationService;
 import com.example.demo.utils.JsonResult;
 import com.example.demo.utils.MapUtils;
+import com.example.demo.vo.ExInformationAndAuthorVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -35,7 +36,7 @@ public class ExInformationController {
 
     @GetMapping("/queryExInformation")
     @ApiOperation(value = "展示展品信息", notes = "展示展品信息", produces = MediaType.APPLICATION_JSON_VALUE)
-    public JsonResult<?> getPersonRoad(@RequestParam Map map) {
+    public JsonResult<?> queryExInformation(@RequestParam Map map) {
         try{
             MapUtils params = MapUtils.getInstance(map);
             Integer type = params.getInteger("type");
@@ -47,6 +48,22 @@ public class ExInformationController {
             return JsonResult.error("展示展品失败");
         }
     }
+
+    @GetMapping("/selectExInformationAndAuthor")
+    @ApiOperation(value = "查找展品与作者", notes = "查找展品与作者", produces = MediaType.APPLICATION_JSON_VALUE)
+    public JsonResult<?> selectExInformationAndAuthor(@RequestParam Map map) {
+        try{
+            MapUtils params = MapUtils.getInstance(map);
+            Integer id = params.getInteger("id");
+            ExInformationAndAuthorVO exInformationAndAuthorVO = exInformationService.selectExInformationAndAuthor(id);
+            return JsonResult.ok().put(exInformationAndAuthorVO);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            return JsonResult.error("查找展品与作者失败");
+        }
+    }
+
 
 
 }
